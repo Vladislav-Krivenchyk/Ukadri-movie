@@ -153,11 +153,11 @@ export default {
       this.$router.push({name: 'cartoonsVideo', query: { 'card': this.getFilm.article}})
     },
     goToTheFilmWithSliders() {
-      this.$router.push({name: 'cartoonsPostItem', query: { 'card': this.article}})
+      this.$router.push({name: 'cartoonsPublicItem', query: { 'card': this.article}})
     }
   },
   async mounted() {
-    await this.getBloggers()
+    await this.getCartoons()
   }
 }
 </script>
