@@ -45,7 +45,7 @@
                     />
                 </div>
                 <div class="authorization__overlay-form-forgot-password">
-                  <router-link :to="$i18nRoute({ name: 'PasswordRecovery'})">
+                  <router-link :to="({ name: 'PasswordRecovery'})">
                     <span>Забули пароль?</span>
                   </router-link>
                 </div>
@@ -112,7 +112,7 @@ export default {
       }
        sessionStorage.setItem('token', JSON.stringify(form))
        if(sessionStorage.getItem('token') !== form.name && form.password) {
-        this.$router.push( {name: 'mainViewYkadri', path:  'ykadri' })
+        this.$router.push( {name: 'mainViewYkadri', path:  '' })
       }
       location.reload(false)
 

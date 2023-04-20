@@ -5,7 +5,7 @@
                 <div class="authorization__overlay-block">
                     <div class="authorization__overlay-inner">
                       <div class="authorization__overlay-close">
-                        <router-link :to="$i18nRoute({path: '/'})">
+                        <router-link :to="({path: '/'})">
                           <icon-close/>
                         </router-link>
                       </div>
@@ -14,7 +14,7 @@
                             <div
                                 class="authorization__overlay-form-choose"
                             >
-                              <router-link :to="$i18nRoute({ name: 'FormAuth'})">
+                              <router-link :to="({ name: 'FormAuth'})">
                                     <span
                                         class="authorization__overlay-form-choose-registration"
                                     >

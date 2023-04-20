@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { Trans } from '@/plugins/Translation'
 
 function load(component) {
   // '@' is aliased to src/components
@@ -50,19 +49,18 @@ let routes = []
 if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
   routes = [
     {
-      path: '/:locale',
+      path: '/',
       component: {
         template: "<router-view></router-view>"
       },
-      beforeEnter: Trans.routeMiddleware,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'MainLayout',
           component: load('MainLayout'),
           children: [
             {
-              path: 'ykadri',
+              path: '',
               name: 'mainViewYkadri',
               component: loadViews('MainViewYkadri')
             },
@@ -331,29 +329,22 @@ if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
 } else  {
   routes = [
     {
-      path: '/:locale',
+      path: '/',
       component: {
         template: "<router-view></router-view>"
       },
-      beforeEnter: Trans.routeMiddleware,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'LandingLayout',
           component: load('LandingLayout'),
           children: [
             {
-              path: 'ykadri',
+              path: '',
               name: 'landingViewYkadri',
               component: loadViews('LandingViewYkadri')
             },
             ////////////// popular
-
-            // {
-            //   path: 'populars',
-            //   name: 'popularsFilm',
-            //   component: loadPages('PopularsFilm'),
-            // },
             {
               path: 'popular',
               name: 'popularsItem',
@@ -618,12 +609,6 @@ if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
 
       ]
     },
-    {
-      path: '*',
-      redirect() {
-        return Trans.defaultLocale;
-      }
-    }
   ]
 }
 

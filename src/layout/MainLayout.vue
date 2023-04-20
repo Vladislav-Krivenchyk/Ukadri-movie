@@ -5,45 +5,45 @@
       <div class="main-navigation">
         <div class="main-links">
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'moviesFilm'})">
+            <router-link :to="({name: 'moviesFilm'})">
               Фильмы
             </router-link>
           </div>
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'cartoonPage'})">
+            <router-link :to="({name: 'cartoonPage'})">
               Мультфильмы
             </router-link>
           </div>
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'pageTv'})">
+            <router-link :to="({name: 'pageTv'})">
               Телеканалы
             </router-link>
           </div>
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'serialsPage'})">
+            <router-link :to="({name: 'serialsPage'})">
               Сериалы
             </router-link>
           </div>
         </div>
 
         <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'mainViewYkadri'})">
+            <router-link :to="({name: 'mainViewYkadri'})">
               <IconLogoYkadriWhite/>
             </router-link>
         </div>
         <div class="main-links">
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'pageSport'})">
+            <router-link :to="({name: 'pageSport'})">
               Спорт
             </router-link>
           </div>
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'pageBloggers'})">
+            <router-link :to="({name: 'pageBloggers'})">
               Блогеры
             </router-link>
           </div>
           <div class="main-link">
-            <router-link :to="$i18nRoute({name: 'pageShou'})">
+            <router-link :to="({name: 'pageShou'})">
               Шоу
             </router-link>
           </div>
