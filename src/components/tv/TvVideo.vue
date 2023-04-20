@@ -97,7 +97,7 @@
 import {mapActions, mapGetters} from "vuex";
 import BaseRating from "@/assets/baseComponents/BaseRating.vue";
 import VideoComponent from "@/assets/baseComponents/VideoComponent.vue";
-import BaseTextarea from "@/assets/baseComponents/BesaTextarea.vue";
+import BaseTextarea from "@/assets/baseComponents/BaseTextarea.vue";
 import BaseButton from "@/assets/baseComponents/BaseButton.vue";
 export default {
   name: "TvVideo",

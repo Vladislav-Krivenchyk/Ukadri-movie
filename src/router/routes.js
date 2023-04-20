@@ -15,6 +15,9 @@ function loadPages(component) {
 function loadFilms(component) {
   return () => import(`@/components/films/${component}.vue`)
 }
+function loadPopular(component) {
+  return () => import(`@/components/popular/${component}.vue`)
+}
 function loadBloggers(component) {
   return () => import(`@/components/bloggers/${component}.vue`)
 }
@@ -63,6 +66,40 @@ if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
               name: 'mainViewYkadri',
               component: loadViews('MainViewYkadri')
             },
+            ////////////// popular
+
+            // {
+            //   path: 'populars',
+            //   name: 'popularsFilm',
+            //   component: loadPages('PopularsFilm'),
+            // },
+            {
+              path: 'popular',
+              name: 'popularsItem',
+              component: loadPopular('PopularsItem')
+            },
+            {
+              path: 'trailer',
+              name: 'popularsTrailer',
+              component: loadPopular('PopularsTrailer')
+            },
+            {
+              path: 'movie',
+              name: 'popularsPublicItem',
+              component: loadPopular('PopularsPublicItem')
+            },
+            {
+              path: 'actor',
+              name: 'popularsActor',
+              component: loadPopular('PopularsActor')
+            },
+            {
+              path: 'video',
+              name: 'popularsVideo',
+              component: loadPopular('PopularsVideo')
+            },
+
+            ///////// films
             {
               path: 'films',
               name: 'moviesFilm',
@@ -94,7 +131,7 @@ if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
               component: loadFilms('MoviesVideo')
             },
 
-      ///bloggers
+            ///////bloggers
             {
               path: 'bloggers',
               name: 'pageBloggers',
@@ -310,6 +347,40 @@ if(sessionStorage.getItem('token') && sessionStorage.getItem('token') !== '') {
               name: 'landingViewYkadri',
               component: loadViews('LandingViewYkadri')
             },
+            ////////////// popular
+
+            // {
+            //   path: 'populars',
+            //   name: 'popularsFilm',
+            //   component: loadPages('PopularsFilm'),
+            // },
+            {
+              path: 'popular',
+              name: 'popularsItem',
+              component: loadPopular('PopularsItem')
+            },
+            {
+              path: 'trailer',
+              name: 'popularsTrailer',
+              component: loadPopular('PopularsTrailer')
+            },
+            {
+              path: 'movie',
+              name: 'popularsPublicItem',
+              component: loadPopular('PopularsPublicItem')
+            },
+            {
+              path: 'actor',
+              name: 'popularsActor',
+              component: loadPopular('PopularsActor')
+            },
+            {
+              path: 'video',
+              name: 'popularsVideo',
+              component: loadPopular('PopularsVideo')
+            },
+
+//////////// films
             {
               path: 'films',
               name: 'moviesFilm',

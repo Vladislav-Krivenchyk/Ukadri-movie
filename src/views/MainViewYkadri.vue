@@ -8,7 +8,7 @@
                 :key="item.id"
                 @mouseover="mouse = i"
                 @mouseleave="mouse = null"
-
+                @click="getItem(item.article)"
             >
               <div class="post" :style="
                       i === 0 ? {'width': '130%'} : {} &&
@@ -87,6 +87,9 @@ export default {
   },
   methods: {
     ...mapActions('popularStore', ['getPopular']),
+    getItem(film) {
+      this.$router.push({name: 'popularsItem', query: { 'card': film }})
+    }
   },
   async mounted() {
     await this.getPopular()

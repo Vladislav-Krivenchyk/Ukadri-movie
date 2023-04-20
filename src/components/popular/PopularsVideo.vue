@@ -25,12 +25,12 @@
               </div>
               <div class="mp-post">
                 <div class="mp-post-img">
-                  <img :src="require('@/assets/images/films/' + episode.img)" alt="" style="width: 250px" class="mp-post shadow">
+                  <img :src="require('@/assets/images/popular/' + episode.img)" alt="" style="width: 250px" class="mp-post shadow">
                 </div>
               </div>
               <div class="mp-post-item">
                 <div class="mp-post-img">
-                  <img :src="require('@/assets/images/films/' + episode.img)" alt="" style="width: 250px">
+                  <img :src="require('@/assets/images/popular/' + episode.img)" alt="" style="width: 250px">
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="mp-video">
-        <video-component :data-poster="require('@/assets/images/films/' + getFilm.img)"/>
+        <video-component :data-poster="require('@/assets/images/popular/' + getFilm.img)"/>
         <div class="mp-comment">
           <base-textarea
               label="Comment"
@@ -78,12 +78,12 @@
             </div>
             <div class="mp-post">
               <div class="mp-post-img">
-                 <img :src="require('@/assets/images/films/' + episode.img)" alt="" style="width: 250px" class="mp-post shadow">
+                 <img :src="require('@/assets/images/popular/' + episode.img)" alt="" style="width: 250px" class="mp-post shadow">
                  </div>
               </div>
             <div class="mp-post-item">
               <div class="mp-post-img">
-                <img :src="require('@/assets/images/films/' + episode.img)" alt="" style="width: 250px">
+                <img :src="require('@/assets/images/popular/' + episode.img)" alt="" style="width: 250px">
                 </div>
               </div>
           </div>
@@ -100,7 +100,7 @@ import VideoComponent from "@/assets/baseComponents/VideoComponent.vue";
 import BaseTextarea from "@/assets/baseComponents/BaseTextarea.vue";
 import BaseButton from "@/assets/baseComponents/BaseButton.vue";
 export default {
-  name: "MoviesVideo",
+  name: "PopularsVideo",
   components: {
     BaseButton,
     BaseTextarea,
@@ -114,8 +114,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('filmsStore', {
-      getFilmItem: 'getFilmState'
+    ...mapGetters('popularStore', {
+      getFilmItem: 'getPopularState'
     }),
     getFilmCollection() {
       return this.getFilmItem
@@ -131,9 +131,9 @@ export default {
     },
   },
   methods: {
-    ...mapActions('filmsStore', ['getFilms']),
+    ...mapActions('popularStore', ['getPopular']),
     transitionMovie(article) {
-      this.$router.push({name: 'moviesPublicItem', query: { 'card': article }})
+      this.$router.push({name: 'popularsPublicItem', query: { 'card': article }})
     },
     sendComment() {
       this.form = {
@@ -144,11 +144,11 @@ export default {
       this.textarea = ''
     },
     transitionTrailer() {
-      this.$router.push({name: 'moviesTrailer', query: { 'card': this.getFilm.article}})
+      this.$router.push({name: 'popularsTrailer', query: { 'card': this.getFilm.article}})
     }
   },
   mounted() {
-    this.getFilms()
+    this.getPopular()
   },
 }
 </script>

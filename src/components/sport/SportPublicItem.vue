@@ -1,5 +1,5 @@
 <template>
-  <div class="main-page">
+  <div class="main-page" v-if="getPostFilm">
     <div class="main-content">
       <div class="mp-inner">
         <div class="mp-desc">
@@ -21,15 +21,33 @@
             <span class="mp-actor">Актори</span>
           </div>
         </div>
-        <div class="mp-img" >
-          <img :src="require('@/assets/images/sports/' + getPostFilm.img)" alt="" v-if="getPostFilm.img">
-          <img :src="require('@/assets/no-poster.jpeg')" alt="" v-else>
+        <div class="post">
+          <div class="post-img">
+            <img v-if="getPostFilm.img" :src="require('@/assets/images/sports/' + getPostFilm.img)" class="post shadow" />
+            <img v-else :src="require('@/assets/no-poster.jpeg')" alt="" >
+          </div>
+          <div class="post-item">
+            <div class="post-img" >
+              <img v-if="getPostFilm.img" :src="require('@/assets/images/sports/' + getPostFilm.img)"  />
+              <img v-else :src="require('@/assets/no-poster.jpeg')" alt="">
+            </div>
+          </div>
         </div>
       </div>
       <div class="mp-actors">
         <div v-for="actor in getPostFilm.actors" :key="actor.id" class="mp-actor-item" @click="seeTheActor(actor.article)">
-          <img :src="require('@/assets/images/sports/actors/' + actor.img)" alt="" v-if="actor.img" />
-          <img :src="require('@/assets/no-poster.jpeg')" alt="" v-else />
+          <div class="mp-post">
+            <div class="mp-post-img">
+              <img :src="require('@/assets/images/sports/actors/' + actor.img)" alt="" v-if="actor.img" class="mp-post shadow" />
+              <img :src="require('@/assets/no-poster.jpeg')" alt="" v-else />
+            </div>
+            <div class="mp-post-item">
+              <div class="mp-post-img">
+                <img :src="require('@/assets/images/sports/actors/' + actor.img)" alt="" v-if="actor.img"  />
+                <img :src="require('@/assets/no-poster.jpeg')" alt="" v-else />
+              </div>
+            </div>
+          </div>
           <h4>{{actor.name}}</h4>
         </div>
       </div>
@@ -79,6 +97,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/css/src/mixins/overlayImages.mixin.sass"
+
 .mp-inner
   display: flex
   justify-content: space-between
@@ -183,4 +203,59 @@ export default {
   img
     box-shadow: 2px 2px 20px 7px rgb(255 255 255 / 11%)
     height: 545px
+
+.mp-post
+  position: relative
+  &:before
+    background: -webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,.8)),color-stop(80%,rgba(0,0,0,0)))
+    background: -o-linear-gradient(bottom,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 80%)
+    background: linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,0) 80%)
+    border-radius: 10px
+    bottom: -5px
+    content: ""
+    display: block
+    -webkit-filter: blur(7px) opacity(.75)
+    filter: blur(7px) opacity(.75)
+    height: 220px
+    opacity: 1
+    pointer-events: none
+    position: absolute
+    -webkit-transition: opacity .75s
+    -o-transition: opacity .75s
+    transition: opacity .75s
+    width: 100%
+    z-index: 2
+    transition: opacity .75s ease 0s,-webkit-filter .75s ease 0s
+    -o-transition: filter .75s ease 0s,opacity .75s ease 0s
+    transition: filter .75s ease 0s,opacity .75s ease 0s
+    transition: filter .75s ease 0s,opacity .75s ease 0s,-webkit-filter .75s ease 0s
+
+  &.shadow
+    border-radius: 5px
+    -webkit-filter: blur(7px) opacity(.75)
+    filter: blur(7px) opacity(.75)
+    left: -.5%
+    top: 2px
+    width: 101%
+    height: 220px
+    transition: opacity .75s ease 0s,-webkit-filter .75s ease 0s
+    -o-transition: filter .75s ease 0s,opacity .75s ease 0s
+    transition: filter .75s ease 0s,opacity .75s ease 0s
+    transition: filter .75s ease 0s,opacity .75s ease 0s,-webkit-filter .75s ease 0s
+.mp-post-img
+  height: 220px
+  img
+    border-radius: 12px
+
+.mp-post-item
+  position: absolute
+  top: 0
+  height: 220px
+  img
+    border-radius: 12px
+
+.mp-post-item
+  position: absolute
+  top: 0
+
 </style>

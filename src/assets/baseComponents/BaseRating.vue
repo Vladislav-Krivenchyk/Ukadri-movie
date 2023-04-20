@@ -17,7 +17,7 @@ library.add(fas);
 library.add(far);
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
-  name: "baseRating",
+  name: "BaseRating",
   components: {
     FontAwesomeIcon
   },
