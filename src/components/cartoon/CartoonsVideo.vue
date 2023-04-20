@@ -148,7 +148,7 @@ export default {
     }
   },
   mounted() {
-    this.getFilms()
+    this.getCartoons()
   },
 }
 </script>
