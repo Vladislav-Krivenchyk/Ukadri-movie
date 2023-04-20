@@ -1,4 +1,4 @@
-# main-ykadri
+# main-ukadri
 
 ## Project setup
 ```
@@ -22,4 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# -Ykadri-movie
+# ukadri-movie
