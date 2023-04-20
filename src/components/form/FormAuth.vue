@@ -8,7 +8,7 @@
                 <div class="authorization__overlay-block">
                     <div class="authorization__overlay-inner">
                       <div class="authorization__overlay-close">
-                        <router-link :to="$i18nRoute({ name: 'landingViewYkadri', path: 'ykadri'})">
+                        <router-link :to="({ name: 'landingViewYkadri', path: 'ykadri'})">
                           <icon-close/>
                         </router-link>
                       </div>

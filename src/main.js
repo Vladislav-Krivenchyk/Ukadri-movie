@@ -2,8 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/routes'
 import store from './store'
-import { Trans } from "@/plugins/Translation";
-import { i18n } from "@/boot/i18n";
 import '@/css/public/global/styleguide.css'
 import '@/css/src/styleguide.css'
 import '@/css/app.sass'
@@ -19,13 +17,11 @@ Vue.use(VueAxios, axios)
 Vue.use(Carousel3d);
 Vue.use(VueMask);
 Vue.use(ripple);
-Vue.prototype.$i18nRoute = Trans.i18nRoute.bind(Trans)
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  i18n,
   render: h => h(App)
 }).$mount('#app')
