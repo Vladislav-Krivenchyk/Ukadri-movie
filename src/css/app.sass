@@ -1,0 +1,47 @@
+.header
+  padding-left: 30px
+  padding-right: 30px
+  background: #13161a
+  &__nav
+    display: flex
+    z-index: 1
+    &.links
+      width: 100%
+      //padding: 0 20px 10px 20px
+      //justify-content: space-between
+      justify-content: space-around
+      align-items: center
+    li
+      list-style: none
+    a
+      position: relative
+      cursor: pointer
+      font-weight: 700
+      font-size: 16px
+      line-height: 20px
+      color: #FFFFFF
+      text-decoration: none
+      &:after
+        position: absolute
+        content: ""
+        width: 0
+        height: 1px
+        bottom: 0
+        left: 0
+        right: 0
+        background: #0AA3E4
+        transition: all 1s
+      &:hover:after
+        width: 100%
+    &.auth
+      display: flex
+      align-items: flex-end
+      a
+        padding-left: 5px
+      div
+        padding: 0 10px 0 40px
+    &-selected
+      display: flex
+      align-items: flex-end
+      div
+        padding-right: 15px
