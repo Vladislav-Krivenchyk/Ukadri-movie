@@ -23,3 +23,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # ukadri-movie
+![ukadri-movie](@/assets/img.png)
