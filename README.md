@@ -1,4 +1,6 @@
 ![Screen](https://github.com/Vladislav-Kruvenchyk/Ukadri-movie/blob/main/src/assets/Снимок%20экрана%202023-05-26%20в%2013.23.11.png)
+![Screen](https://github.com/Vladislav-Kruvenchyk/Ukadri-movie/blob/main/src/assets/Снимок%20экрана%202023-05-25%20в%2017.13.19.png)
+
 
 # main-ukadri
 
